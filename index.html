@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET Mock Test Result</title>
+
+<!-- Confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background: linear-gradient(180deg,#e3f2fd,#ffffff);
+  text-align:center;
+}
+
+/* HEADER */
+.header{
+  background:#0b4db8;
+  color:#fff;
+  padding:16px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* INPUT */
+.input-box{
+  margin:16px;
+  display:flex;
+  gap:10px;
+}
+
+input{
+  flex:1;
+  padding:12px;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid #bbb;
+}
+
+button{
+  padding:12px 18px;
+  border:none;
+  border-radius:8px;
+  background:#0b4db8;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  margin:16px;
+  padding:16px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* PHOTO */
+.photo{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:4px solid #0b4db8;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+/* MAIN CYLINDER */
+.cylinder{
+  width:130px;
+  height:300px;
+  background:#e0e0e0;
+  border-radius:65px;
+  margin:30px auto;
+  position:relative;
+  overflow:hidden;
+}
+
+.fill{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:0;
+  background:linear-gradient(#00e676,#00c853);
+  border-radius:65px;
+  transition:height 1.5s ease;
+}
+
+.score-text{
+  position:absolute;
+  width:100%;
+  top:45%;
+  font-size:20px;
+  font-weight:bold;
+  color:white;
+  text-shadow:0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* SUBJECTS */
+.subjects{
+  display:flex;
+  justify-content:space-around;
+  margin:20px 10px 40px;
+}
+
+.sub{
+  width:90px;
+}
+
+.sub .bar{
+  height:160px;
+  background:#e0e0e0;
+  border-radius:40px;
+  overflow:hidden;
+  position:relative;
+  margin:auto;
+}
+
+.sub .bar span{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:#42a5f5;
+  border-radius:40px;
+  transition:height 1.5s ease;
+}
+
+.sub p{
+  margin-top:8px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  NEET Mock Test Result
+</div>
+
+<div class="input-box">
+  <input id="roll" placeholder="Enter Roll Number">
+  <button onclick="showResult()">Submit</button>
+</div>
+
+<div id="result" style="display:none">
+
+  <div class="card">
+    <!-- AFTER uploading images, these will show -->
+    <img src="student.jpg" class="photo">
+    <p><b>Roll:</b> 6294850999</p>
+    <p><b>Rank:</b> EXCELLENT</p>
+    <p><b>AIR:</b> 1247</p>
+    <p><b>Percentile:</b> 99.2%</p>
+  </div>
+
+  <div class="cylinder">
+    <div class="fill" id="mainFill"></div>
+    <div class="score-text">570 / 720</div>
+  </div>
+
+  <div class="subjects">
+    <div class="sub">
+      <div class="bar"><span id="phy"></span></div>
+      <p>Physics<br>140</p>
+    </div>
+
+    <div class="sub">
+      <div class="bar"><span id="chem"></span></div>
+      <p>Chemistry<br>130</p>
+    </div>
+
+    <div class="sub">
+      <div class="bar"><span id="bio"></span></div>
+      <p>Biology<br>300</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showResult(){
+  if(document.getElementById("roll").value === "6294850999"){
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("mainFill").style.height = "79%";
+    document.getElementById("phy").style.height = "78%";
+    document.getElementById("chem").style.height = "72%";
+    document.getElementById("bio").style.height = "83%";
+
+    confetti({
+      particleCount:200,
+      spread:120,
+      origin:{y:0.6}
+    });
+  }else{
+    alert("Result not found");
+  }
+}
+</script>
+
+</body>
+  </html>
