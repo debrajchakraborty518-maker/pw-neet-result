@@ -9,7 +9,8 @@
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg,#e8f2ff,#ffffff);
+  background: linear-gradient(180deg,#0f172a,#020617);
+  color:#e5e7eb;
 }
 
 header{
@@ -20,7 +21,11 @@ header{
   font-size:20px;
   font-weight:bold;
 }
-
+.sub p{
+  margin-top:10px;
+  color:#e5e7eb;
+  font-size:15px;
+}
 .container{
   max-width:420px;
   margin:auto;
@@ -51,13 +56,13 @@ button{
 }
 
 .card{
-  background:white;
+  background:#020617;
   border-radius:15px;
   padding:15px;
   margin-top:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
   text-align:center;
-}
+  }
 
 .profile{
   width:110px;
@@ -87,20 +92,32 @@ button{
   bottom:0;
   width:100%;
   height:79%;
-  background:linear-gradient(180deg,#00e676,#00c853);
+  background: linear-gradient(
+    180deg,
+    #22ff88,
+    #00c853,
+    #00a152
+  );
   border-radius:70px;
+  animation: waterMove 4s ease-in-out infinite;
 }
-
+@keyframes waterMove{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+  }
 .main-score{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
   color:white;
-  font-size:26px;
+  font-size:28px;
   font-weight:bold;
-  text-shadow:0 4px 10px rgba(0,0,0,0.4);
-}
+  text-shadow:
+    0 0 10px rgba(34,255,136,0.9),
+    0 0 25px rgba(34,255,136,0.7);
+  }
 
 .subjects{
   display:flex;
@@ -125,9 +142,9 @@ button{
   position:absolute;
   bottom:0;
   width:100%;
-  background:#42a5f5;
   border-radius:40px;
-}
+  animation: waterMove 3s ease-in-out infinite;
+  }
 
 .sub-text{
   position:absolute;
@@ -173,11 +190,11 @@ button{
 <div class="subjects">
 <div class="sub">
 <div class="sub-cylinder">
-<div class="sub-fill" style="height:78%">
+<div class="sub-fill" style="height:78%; background:linear-gradient(180deg,#38bdf8,#0284c7);">
 <span class="sub-text">140</span>
 </div>
 </div>
-<p>Physics</p>
+<p><b>Physics</b><br>140 / 180</p>
 </div>
 
 <div class="sub">
@@ -186,16 +203,16 @@ button{
 <span class="sub-text">130</span>
 </div>
 </div>
-<p>Chemistry</p>
+<p><b>Chemistry</b><br>130 / 180</p>
 </div>
 
 <div class="sub">
 <div class="sub-cylinder">
-<div class="sub-fill" style="height:83%">
+<div class="sub-fill" style="height:83%; background:linear-gradient(180deg,#4ade80,#16a34a);">
 <span class="sub-text">300</span>
 </div>
 </div>
-<p>Biology</p>
+<p><b>Biology</b><br>300 / 360</p>
 </div>
 </div>
 
